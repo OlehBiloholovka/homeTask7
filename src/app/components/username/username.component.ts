@@ -7,11 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsernameComponent implements OnInit {
   username: string;
+  isDisabled: boolean;
 
   constructor() { }
 
   ngOnInit() {
     this.username = '';
+    this.isDisabled = true;
   }
 
+  onChangeInput() {
+    this.isDisabled = this.username === '';
+  }
+
+  onReset() {
+    this.username = '';
+    this.isDisabled = true;
+  }
 }
